@@ -5,9 +5,13 @@ import { AnimatePresence, motion } from 'motion/react'
 import { BsChatDots, BsLightning, BsGlobe, BsShieldCheck, BsClock, BsStars } from "react-icons/bs";
 import { FiArrowRight, FiLogOut, FiLayout, FiChevronRight } from "react-icons/fi";
 import axios from 'axios'
+import { useRouter } from 'next/navigation';
+
 
 
 function HomeClient({email}:{email:string}) {
+
+  const navigate = useRouter()
 
 // FEATURES ARRAY======================================
 
@@ -122,7 +126,7 @@ const [open,setOpen] = useState(false)
        className='absolute right-0 mt-3 w-48 bg-white rounded-2xl shadow-2xl shadow-zinc-900/10 border border-zinc-100 overflow-hidden'
        >
 
-          <button className='w-full text-left px-5 py-3.5 text-sm font-medium text-zinc-700 hover:bg-zinc-50 transition-colors duration-200 flex items-center gap-3'>
+          <button onClick={()=>navigate.push("/dashboard")} className='w-full text-left px-5 py-3.5 text-sm font-medium text-zinc-700 hover:bg-zinc-50 transition-colors duration-200 flex items-center gap-3'>
             <FiLayout size={16} className='text-zinc-400'/>
             Dashboard
           </button>
@@ -185,6 +189,7 @@ const [open,setOpen] = useState(false)
 
              {email ? 
           <motion.button 
+          onClick={()=>navigate.push("/dashboard")} 
             whileHover={{scale:1.04, y:-2}}
             whileTap={{scale:0.98}}
             className='px-8 py-4 rounded-2xl bg-zinc-900 text-white font-semibold hover:bg-zinc-800 transition-all duration-300 shadow-xl shadow-zinc-900/20 flex items-center gap-2 cursor-pointer'
@@ -198,7 +203,7 @@ const [open,setOpen] = useState(false)
             onClick={handleLogin}
             className='px-8 py-4 rounded-2xl bg-zinc-900 text-white font-semibold hover:bg-zinc-800 transition-all duration-300 shadow-xl shadow-zinc-900/20 flex items-center gap-2 cursor-pointer'
           >
-            Get Started Free
+            Get Started 
             <FiArrowRight size={18}/>
           </motion.button>  }
 
