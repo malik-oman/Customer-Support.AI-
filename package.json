@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@google/genai": "^2.10.0",
     "@scalekit-sdk/node": "^2.6.3",
     "axios": "^1.18.1",
     "lucide-react": "^1.21.0",
