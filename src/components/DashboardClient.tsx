@@ -72,6 +72,7 @@ function DashboardClient({ownerId}:{ownerId:string}) {
         </motion.div>
 
          <motion.button 
+         onClick={()=>navigate.push("/embed")}
            whileHover={{scale:1.03}}
            whileTap={{scale:0.97}}
            className='px-3 sm:px-4 py-2 rounded-xl border border-zinc-200 text-xs sm:text-sm hover:bg-zinc-100 hover:border-zinc-300 transition-all duration-300 cursor-pointer flex items-center gap-2 shadow-sm'
